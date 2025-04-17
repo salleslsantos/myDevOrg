@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="showSecondButton" type="Boolean" default="false"/>
+    
+    <lightning:button label="Iniciar Contagem" onclick="{!c.startTimer}" />
+    
+    <aura:if isTrue="{!v.showSecondButton}">
+        <lightning:button label="Botão Após 30s" />
+    </aura:if>
+</aura:component>

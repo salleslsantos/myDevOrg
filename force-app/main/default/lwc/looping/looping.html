@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="for:each loop" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <template for:each={carList} for:item="carro">
+                    <div key={carro}> 
+                        <!--Each child element in a list must have a unique key. This helps Salesforce optimize rendering.-->
+                        {carro}
+                    </div>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="iterator loop" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <template iterator:time={nbbTeams}>
+                <div key={time.value.id}>
+                    <ul class="slds-has-dividers_aroud-space">
+                        <li class="slds-item">
+                            <strong>{time.value.team} </strong>
+                            ({time.value.city})
+                        </li>
+                    </ul>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

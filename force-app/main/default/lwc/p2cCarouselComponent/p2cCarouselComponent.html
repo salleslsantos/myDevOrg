@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="parent to child non-primitive datacomm">
+        <div class="slds-var-m-around_medium">
+            <lightning-carousel disable-auto-scroll>
+                    <template for:each={carouselDetail} for:item="carrosel">
+                        <lightning-carousel-image
+                            key = {carrosel.header}
+                            src = {carrosel.src}
+                            header = {carrosel.header}
+                            description = {carrosel.description} >
+                        </lightning-carousel-image>
+                </template>
+            </lightning-carousel>
+        </div>
+    </lightning-card>
+</template>

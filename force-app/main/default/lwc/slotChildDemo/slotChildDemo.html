@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="child component">
+        <div>what´s ur name?</div>
+        <div><slot name= "firstQuestion"></slot></div><!--unnamed slot-->
+        <div>what´s ur age?</div>
+        <div><slot name= "secondQuestion"></slot></div><!--named slot-->
+        <footer class="slds-card__footer">
+            <slot name="footer"></slot>
+        </footer>
+
+        <!--unnamed slot:
+        <div><slot></slot></div>-->
+
+
+    </lightning-card>
+</template>

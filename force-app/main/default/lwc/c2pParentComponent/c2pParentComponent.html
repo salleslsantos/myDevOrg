@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Child 2 parent communication">
+        <div class="slds-var-m-around_medium">
+            <lightning-button label="show modal" variant="brand" title="modal" onclick={handleClick}>
+            
+
+            <!--para receber um valor no componente pai, devemos começar com ON.
+            No caso do evento banana, devemos chamar o listener de onbanana-->
+            
+            </lightning-button>
+            <h1>{msg}</h1>
+            <template if:true={showModal}>
+                <c-c2p-modal-component
+                    onbanana = {closeHandler}>
+                </c-c2p-modal-component>
+            </template>
+        </div>
+    </lightning-card>
+</template>

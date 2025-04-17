@@ -1,0 +1,58 @@
+<template>
+
+    <lightning-card title="Record-form" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectName}
+                fields={fieldList}
+                onsuccess = {successHandler}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Record-form-display" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectName}
+                record-id="001Ke00000VgkJ2IAJ"
+                fields={fieldList}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Record-form-display-readonly" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectName}
+                record-id="001Ke00000VgkJ2IAJ"
+                mode="readonly"
+                fields={fieldList}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Record-edit" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectName}
+                record-id="001Ke00000VgkJ2IAJ"
+                mode="edit"
+                columns="2"
+                fields={fieldList}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Record-edit-com-{recordId}" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectName}
+                record-id={recordId}
+                mode="edit"
+                columns="2"
+                fields={fieldList}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+
+</template>

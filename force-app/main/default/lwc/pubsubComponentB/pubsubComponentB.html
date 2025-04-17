@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Component B">
+        <div class="slds-p-around_medium">
+            Message received from A: {messageFromA}
+        </div>
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                type="text"
+                onkeyup={inputHandlerB}
+                class="slds-m-bottom_medium">
+            </lightning-input>
+            <lightning-button 
+                variant="brand" 
+                label="Publish B"
+                onclick={publishHandlerB}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

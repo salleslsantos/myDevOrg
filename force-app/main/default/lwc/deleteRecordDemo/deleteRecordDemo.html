@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="delete record">
+        <div class="slds-m-around_medium">
+        <lightning-input 
+            name="deleteRecord" 
+            label="Enter id" 
+            onchange={handleChange}>
+        </lightning-input>
+        <lightning-button label="Delete" onclick={handleDelete}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

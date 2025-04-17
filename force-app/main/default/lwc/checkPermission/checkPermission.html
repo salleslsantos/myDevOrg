@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="check permission">
+        Form factor (large, medium ou small): {form}
+        <br/>
+        User ID: {userId}<br/>
+        Guest: {isGuest}<br/>
+        <template if:true={hasCustomPermission}>
+            <p>You can see me because you have the permission!</p>
+        </template>
+
+        <template if:false={hasCustomPermission}>
+            <p>You can't see me because you don't have the permission!</p>
+        </template>
+    </lightning-card>
+</template>

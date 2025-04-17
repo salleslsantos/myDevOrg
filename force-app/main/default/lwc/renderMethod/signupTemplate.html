@@ -1,0 +1,44 @@
+<template>
+    
+    <lightning-card title="SignUp" icon-name="custom:custom14">
+        <h2 class="slds-text-heading_medium slds-var-m-bottom_medium">Sign Up</h2>
+        <div class="slds-var-m-around_medium">
+
+            <lightning-input 
+                label="First name" 
+                type="text">
+            </lightning-input>
+
+            <lightning-input 
+                label="Last name" 
+                type="text">
+            </lightning-input>
+
+            <lightning-input 
+                label="Email" 
+                type="email">
+            </lightning-input>
+
+            <lightning-input 
+                label="Password" 
+                type="password">
+            </lightning-input>
+
+            <lightning-button 
+                label="Return"
+                variant="destructive"
+                title="Return"
+                onclick={handleClick}
+                class="slds-m-left_x-small">
+            </lightning-button>
+            <lightning-button 
+                label="Save"
+                variant="success"
+                title="save"
+                onclick={handleSubmit}
+                class="slds-m-left_x-small">
+            </lightning-button>
+        </div>
+
+    </lightning-card>
+</template>

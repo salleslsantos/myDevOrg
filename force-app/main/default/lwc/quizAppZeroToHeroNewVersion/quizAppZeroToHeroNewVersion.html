@@ -1,0 +1,76 @@
+<template>
+    <lightning-card title="Quiz App In LWC">
+        <div class="slds-m-around_medium">
+
+            <template for:each={myQuestions} for:item="pergunta">
+                <div key={pergunta.id}>
+                    
+                    <div>{pergunta.id} - {pergunta.question}</div>
+                    
+                    <input 
+                    type="radio"
+                    name = {pergunta.id}
+                    onchange={handleSelectedRadio}
+                    value="a">
+                    {pergunta.options.a}
+                
+                    
+
+                    <input 
+                    type="radio"
+                    name = {pergunta.id}
+                    onchange={handleSelectedRadio}
+                    value="b">
+                    {pergunta.options.b}
+                    
+                    
+
+                    <input 
+                    type="radio"
+                    name = {pergunta.id}
+                    onchange={handleSelectedRadio}
+                    value="c">
+                    {pergunta.options.c}
+                    
+                    
+
+                    <input 
+                    type="radio"
+                    name = {pergunta.id}
+                    onchange={handleSelectedRadio}
+                    value="d">
+                    {pergunta.options.d}
+                    
+                    <br>
+                    <br>
+                
+                </div>
+            
+            </template>
+            <div class="text">
+            <template if:true={size}>
+                Você acertou {size} pergunta(s)
+            </template>
+        </div>
+        <br>
+        <lightning-button 
+                variant="brand" 
+                type="submit"
+                label="Submit"
+                title="Submit Quiz"
+                class="slds-m-around_small"
+                disabled={allNotSelected}
+                onclick={submitHandler}>
+        </lightning-button>
+        <lightning-button 
+                variant="brand" 
+                type="reset"
+                label="Reset"
+                title="Reset Quiz"
+                class="slds-m-around_small"
+                onclick={resetHandler}>
+        </lightning-button>
+        </div>
+    </lightning-card>
+
+</template>

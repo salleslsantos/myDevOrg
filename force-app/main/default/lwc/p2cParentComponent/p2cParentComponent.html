@@ -1,0 +1,39 @@
+<template>
+    <!--cenário: informação simples-->
+    <lightning-card title="parent component">
+        <div class="slds-var-m-around_medium">
+        <c-p2c-alert-component
+            message = "hurray!!!"
+            card-heading="child component: alert from parent"
+            number="20"
+            is-valid = false>
+        </c-p2c-alert-component>
+    </div>
+
+    <!--cenário: informação complexa-->
+    <div class="slds-var-m-bottom_medium">
+        <c-p2c-carousel-component carousel-detail={carouselData}></c-p2c-carousel-component>
+    </div>
+
+    <!--cenário: informação passada via ação-->
+    <div class="slds-var-m-around_medium">
+        <lightning-input
+            type="number"
+            max="100"
+            label="Enter percentage"
+            onchange={handlePercentage}>
+        </lightning-input>
+        <c-p2c-progress-component progress-value={valor}></c-p2c-progress-component>
+    </div>
+
+    <!--cenário: chamando método do componente filho-->
+    <c-p2c-slider-component></c-p2c-slider-component>
+    <lightning-button
+        variant="brand"
+        label="Reset slider"
+        onclick={handleClick}>
+
+    </lightning-button>
+
+    </lightning-card>
+</template>

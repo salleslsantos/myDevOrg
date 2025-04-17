@@ -1,0 +1,50 @@
+<template>
+    <lightning-card title="Player info" icon-name="standard:employee_contact" style="box-shadow: 0px 40px 60px rgba(0,0,0,0.1);border-radius: 10px;">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="text"
+                label="Search"
+                placeholder="Search for a NBA player"
+                value={playerName}
+                onchange={handlePlayerName}>
+            </lightning-input>
+            <br/>
+            <lightning-button 
+                label="Search" 
+                variant="brand"
+                onclick={handleSearch}>
+            </lightning-button>
+            
+            <br/>
+            <div style="text-align: center;">
+                <img src={playerPhoto} alt="Player Photo" title={name} style="border-radius: 20%; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); width: 200px; height: 200px; object-fit: cover; margin: 20px auto;" />
+            </div>
+            <template if:true={teamLogo}>
+            <br/>
+            <p style="text-align: center;"><span style="text-align: start; color: rgb(24, 24, 24); background-color: rgb(255, 255, 255); font-size: 26px; font-family: Arial, Helvetica, sans-serif;"><strong>{name} ({role})</strong></span></p> 
+            <p style="text-align: center;"><span style="text-align: start; color: rgb(24, 24, 24); background-color: rgb(255, 255, 255); font-size: 20px; font-family: Arial, Helvetica, sans-serif;">{team} <img src = {teamLogo} width="50" height="50"></span></p>
+        </template>
+            <br/>
+        
+            
+            <!--div style="display: flex; gap: 100px;"-->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; background-color: #f4f4f4; border-radius: 8px;">
+                <!-- Column 1 -->
+                <div style="font-size: 20px; width: 200px;">
+                    <div><b>PPG:</b> {ppg}</div>
+                    <br/>
+                    <div><b>RPG:</b> {rpg}</div>
+                    <br/>
+                    <div><b>APG:</b> {apg}</div>
+                </div>
+            
+                <!-- Column 2 -->
+                <div style="font-size: 20px; width: 200px;">
+                    <div><b>BPG:</b> {bpg}</div>
+                    <br/>
+                    <div><b>SPG:</b> {spg}</div>
+                </div>
+            </div>    
+        </div>      
+    </lightning-card>
+</template>

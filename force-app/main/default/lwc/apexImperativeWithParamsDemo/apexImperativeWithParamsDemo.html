@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="Hello Vlocode" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                onchange={handleChange}
+                label="Search for term"
+                name="search"
+                value={searchValue}
+                placeholder="search here!">
+            </lightning-input>
+            <lightning-button 
+                label="Go!" 
+                name="goSearch"
+                onclick={handleClick}>
+            </lightning-button>
+        </div>
+        <div class="slds-m-around_medium">
+            <template if:true={accs}>
+                <template for:each={accs} for:item="acc">
+                    <div key={accs.Id}>
+                        <div>Name: {acc.Name}</div>
+                        <div>Type: {acc.Type}</div>
+                        <div>Industry: {acc.Industry}</div>
+                        <br/>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Movie Poster" icon-name="action:add_photo_video">
+        <div class="slds-var-m-around_medium">
+            <template if:true={showPoster}>
+                <img src={showPoster} alt="Poster" style="width: 50%; height: auto;" />
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,98 @@
+<template>
+    <lightning-card title="Weather/Postal information" icon-name="standard:location">
+        <div class="slds-var-m-around_medium">
+            <lightning-input 
+                label="Postal Code" 
+                placeholder="Please, insert the postal code" 
+                type="number" 
+                value={postalCode} 
+                pattern="[0-9]{8}" 
+                field-level-help="Insert the postal code in the format XXXXXXXX"
+                required="true"
+                class="slds-size_3-of-12 custom-input"
+                max-length="8"
+                onchange={handlePostalCodeChange}>
+            </lightning-input>
+            <br/>
+            <lightning-button 
+                label="Search" 
+                variant="brand" 
+                onclick={handleSearchPostalCode}>
+            </lightning-button>
+            <br/>
+            <br/>
+
+            <template if:true={statusCode}>
+                <b><h2>Dados do endereço</h2></b>
+                <div class="slds-grid slds-gutters slds-wrap">
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input
+                            label="Street"
+                            value={address}
+                            read-only="true">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input
+                            label="Neighborhood"
+                            value={block}
+                            read-only="true">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input
+                            label="Complement"
+                            value={complement}
+                            read-only="true">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input
+                            label="Postal code"
+                            value={postalCodeValue}
+                            type="text"
+                            read-only="true">
+                        </lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input
+                            label="City"
+                            value={city}
+                            read-only="true">
+                        </lightning-input>    
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-input
+                            label="State"
+                            value={state}
+                            read-only="true">
+                        </lightning-input>      
+                    </div>  
+                </div>
+                <br/>
+                <lightning-button 
+                label="Get weather data" 
+                variant="brand" 
+                onclick={handleWeatherData}>
+            </lightning-button>
+            <br/>
+            <br/>                   
+            <template if:true={showWeather}>
+            Current temperature: <b>{temperature}°C</b> ({weatherText})
+            <br/>
+            <img src={iconURL} alt={temperature} />
+            <br/>
+            <i>Date/time: {datetimelog}</i>
+            <br/>
+            </template>
+                <lightning-map
+                    map-markers={mapMarkers}
+                    zoom-level={zoomLevel}>
+                </lightning-map>
+                <br/>
+                <br/>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>

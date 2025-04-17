@@ -1,0 +1,6 @@
+@import 'c/cssLibrary';
+/*abaixo, styling exclusivo desse componente*/
+.css{
+    width:80%;
+    background-color: goldenrod;
+}

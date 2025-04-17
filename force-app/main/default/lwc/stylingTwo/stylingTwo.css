@@ -1,0 +1,6 @@
+@import 'c/cssLibrary';
+/*abaixo, styling exclusivo desse componente*/
+.html{
+    width:90%;
+    background-color: violet;
+}

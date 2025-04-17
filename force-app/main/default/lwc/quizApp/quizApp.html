@@ -1,0 +1,67 @@
+<template>
+    <lightning-card title="Quiz app in LWC">
+        <div class="slds-m-around_medium">
+            <div>
+
+            <lightning-radio-group 
+                        name="pergunta1"
+                        label="Em qual posição Luka Doncic joga?"
+                        options={question1}
+                        onchange={handleRadioSelected}
+                        value={value}
+                        type="radio">
+            </lightning-radio-group>
+<br>
+            <lightning-radio-group 
+                        name="pergunta2"
+                        label="Qual o país de Nikola Jokic?"
+                        options={question2}
+                        onchange={handleRadioSelected}
+                        value={value}
+                        type="radio">
+            </lightning-radio-group>
+<br>
+            <lightning-radio-group 
+                        name="pergunta3"
+                        label="Quem é o maior armador brasileiro?"
+                        options={question3}
+                        onchange={handleRadioSelected}
+                        value={value}
+                        type="radio">
+            </lightning-radio-group>
+        </div>
+        <br>
+        <template if:true={allCorrect}>
+            <div class="green">Você acertou tudo!</div>
+        </template>
+        <template if:true={almostCorrect}>
+            <div class="red">Você acertou {counter} de 3 perguntas</div>
+        </template>
+            <br>
+        <div>
+        <lightning-button-group>
+            <template if:false={buttonState}>
+                <lightning-button 
+                    label="Submit"
+                    disabled class="slds-m-left_x-small"
+                    variant="brand"
+                    onclick={handleSubmit}>
+                </lightning-button>
+            </template>
+            <template if:true={buttonState}>
+                <lightning-button 
+                    label="Submit"
+                    variant="brand"
+                    onclick={handleSubmit}>
+                </lightning-button>
+            </template>
+            <lightning-button
+                onclick={handleReset}
+                variant="brand"
+                label="Reset">
+            </lightning-button>
+        </lightning-button-group>
+    </div>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="getObjectInfo adapter" icon-name="standard:account">
+        <div class="slds-var-p-around_medium">
+            <div>id do recType: {defaultRecordTypeId}</div>
+            <div>apiname: {apiName}</div>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="getObjectInfos adapter" icon-name="standard:account">
+        <div class="slds-var-p-around_medium">
+            <template if:true={objInfos}>
+                <template for:each={objInfos.results} for:item="obj">
+                    <div key={obj.result.apiName}>
+                        <div>object api name: {obj.result.apiName}</div>
+                        <div>default recType: {obj.result.defaultRecordTypeId}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

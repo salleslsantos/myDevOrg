@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Movie data" icon-name="action:record">
+        <div class="slds-var-m-around_medium">
+            Title: {title}
+            <br/>
+            Year: {year}
+            <br/>
+            Genre: {genre}
+            <br/>
+            Director: {director}
+            <br/>
+            Actors: {actors}
+            <br/>
+            Awards: {awards}
+            <br/>
+            Ratings:
+            <br/>
+            <ul>
+            <template for:each={ratingTable} for:item="item">
+                
+                <li key={item.Source}>
+                    {item.Source}: ({item.Value})
+                </li>
+            
+            </template>
+        </ul>
+        </div>
+    </lightning-card>
+</template>

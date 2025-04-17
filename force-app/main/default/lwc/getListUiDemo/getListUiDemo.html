@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="list view">
+        <div class="slds-var-p-around_medium">
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contacts} for:item="ctt">
+                        <tr key={ctt.fields.Id.Value}>
+                            <td>{ctt.fields.Name.value}</td>
+                            <td>{ctt.fields.Phone.value}</td>
+                            <td>{ctt.fields.Title.value}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+            
+    </lightning-card>
+</template>
