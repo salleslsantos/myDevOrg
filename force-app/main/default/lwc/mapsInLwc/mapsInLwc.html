@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Maps in LWC">
+        <div class="slds-p-around_medium">
+            <lightning-map
+                map-markers={mapMarkers}
+                markers-title={mapTitle}
+                onmarkerselect={handleMarkerSelect}
+                selected-marker-value={selectedMarkerValue}>
+            </lightning-map>
+        </div>
+    </lightning-card>
+</template>
