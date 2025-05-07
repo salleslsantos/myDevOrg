@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="call modal">
+        <div class="slds-m-around_medium">
+            <lightning-button 
+                label="Modal"
+                onclick={handleClick}
+                variant="brand">
+            </lightning-button>
+        </div>
+    </lightning-card>
+
+    <template if:true={isOpen}>
+        <c-modal-wrapper
+        title = "meu modal">
+    </c-modal-wrapper>
+    </template>
+</template>
