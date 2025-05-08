@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="date validation">
+        <div class="slds-m-around_medium">
+            <lightning-input
+                name="startdate"
+                onchange={changeHandler}
+                label="Start Date"
+                type="date">
+            </lightning-input>
+            <lightning-input
+                name="enddate"
+                onchange={changeHandler}
+                label="End Date"
+                type="date">
+            </lightning-input>
+            <br/>
+            <template if:true={notValid}>
+                o startdate precisa ser menor que o enddate!
+            </template>
+            <br/>
+            <lightning-button label="Submit" onclick={clickHandler} name="submit" variant="brand"></lightning-button>
+        </div>
+    </lightning-card>
+</template>
