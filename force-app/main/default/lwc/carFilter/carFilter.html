@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="Filters" icon-name="standard:calibration">
+        <div class="slds-m-around_medium">
+            <lightning-input 
+                type="search" 
+                onchange={handleSearch} 
+                label="Search" 
+                value={searchKey}>
+            </lightning-input>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-slider 
+                label="Max price" 
+                value={val}
+                onchange={handleSlider} 
+                max="999999" 
+                min="0" 
+                step="100">
+            </lightning-slider>
+        </div>
+        <div class="slds-m-around_medium">
+            <h2>Category</h2>
+            <template if:true={wiredCategories}>
+                <template for:each={wiredCategories.values} for:item="cat">
+                    <lightning-input
+                        key={cat.Value}
+                        label={cat.label}
+                        type="checkbox"
+                        checked
+                        name="category"
+                        value={cat.value}
+                        onchange={handleCheckbox}>
+                    </lightning-input>
+                </template>
+            </template>
+        </div>
+        <div class="slds-m-around_medium">
+            <h2>Make</h2>
+            <template if:true={wiredMake}>
+                <template for:each={wiredMake.values} for:item="make">
+                    <lightning-input
+                        key={make.Value}
+                        label={make.label}
+                        type="checkbox"
+                        checked
+                        name="make"
+                        value={make.value}
+                        onchange={handleCheckbox}>
+                    </lightning-input>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
