@@ -1,5 +1,14 @@
 <template>
-    <lightning-card title="Car card" icon-name="standard:apex_plugin">
-
+    <lightning-card title={name} icon-name="standard:apex_plugin">
+        <div class="slds-p-horizontal_medium">
+            <img src={pictureUrl} alt="Car image" class="car-image"/>
+            <div>Category: {category}</div>
+            <div>Make: {make}</div>
+            <div>MSRP: {msrp}</div>
+            <p class="section-label">OTHER FEATURES</p>
+            <div>Fuel type: {fuel}</div>
+            <div>Number of seats: {seats}</div>
+            <div>Control: {control}</div>
+        </div>
     </lightning-card>
 </template>
