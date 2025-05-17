@@ -1,5 +1,14 @@
 <template>
-    <lightning-card title="Car tile list" icon-name="standard:account">
-
+    <lightning-card title="Car available">
+        <template if:true={cars}>
+            <div class="content">
+                <template for:each={cars} for:item="car">
+                    <c-car-tile-item 
+                        key={car.Id}
+                        car={car}>
+                    </c-car-tile-item>
+                </template>
+            </div>
+        </template>
     </lightning-card>
 </template>

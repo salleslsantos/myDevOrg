@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title={car.Make__c}>
+        <div class="slds-m-around_medium">
+            <img src={car.Picture_URL__c} alt="Car image" class="slds-align_absolute-center carImage"/>
+            <p class="title slds-align_absolute-center">{car.Name}</p>
+            <p class="slds-align_absolute-center">R$ {car.MSRP__c}</p>
+        </div>
+    </lightning-card>
+</template>

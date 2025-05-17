@@ -4,5 +4,6 @@
     "**/bower_components": true,
     "**/.sfdx": true
   },
-  "vlocity.sfdxUsername": "salles.lsantos@gmail.com.developer"
+  "vlocity.sfdxUsername": "salles.lsantos@gmail.com.developer",
+  "salesforce.einsteinForDevelopers.enableAutocompletions": false
 }

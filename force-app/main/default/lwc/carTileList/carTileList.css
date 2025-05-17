@@ -1,2 +1,12 @@
-:host {
+c-car-tile-item{
+    min-width: 200px;
+    flex: 1;
 }
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*display: flex; → ativa o Flexbox layout, permitindo que os elementos filhos sejam posicionados lado a lado.
+
+flex-wrap: wrap; → permite que os itens quebrem para a próxima linha caso não caibam na largura da tela.*/
