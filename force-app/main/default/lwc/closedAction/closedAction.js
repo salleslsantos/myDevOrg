@@ -11,13 +11,17 @@ export default class closedAction extends LightningElement {
     @api invoke(){
         //invoke é chamado quando clicamos no botão da quick action
     
-        //montagem do objeto que será chamado no @wire
+        //montagem do objeto que será chamado no update record
         const fields = {
         Id: this.recordId,
         StageName: 'Closed'
         };
         const recordInput = {fields};
 
+        //não deve usar @wire com updateRecord, porque updateRecord é uma função que 
+        // você chama diretamente — diferente de outras funções como getRecord, 
+        // que sim podem ser usadas com @wire.
+        
         updateRecord(recordInput).then(()=>{
             //chamar modal
             this.callToast('deu bom!!!', 'registro criado!!!', 'success');
