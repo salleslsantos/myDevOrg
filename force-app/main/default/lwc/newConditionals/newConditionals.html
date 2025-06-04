@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Conditionals">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Enter the team:" value={team} onchange={changeHandler} ></lightning-input>
+            <template lwc:if={lakers}>
+                Los angeles lakers
+            </template>
+            <template lwc:elseif={nuggets}>
+                Denver nuggets
+            </template>
+            <template lwc:else>
+                nem lakers nem nuggets
+            </template>
+        </div>
+    </lightning-card>
+</template>
