@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Parent component">
+        <div class="slds-m-around_medium">
+            <div>I´m a parent component</div>
+            <div>Name: {playerProp.name}</div>
+            <div>Position: {playerProp.position}</div>
+            <c-spread-child 
+                playername={playerProp.name}
+                playerposition={playerProp.position}>
+            </c-spread-child>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Parent component: spread">
+        <div class="slds-m-around_medium">
+            <div>I´m a parent component</div>
+            <div>Name: {playerPropTwo.nome}</div>
+            <div>Position: {playerPropTwo.posicao}</div>
+            <c-spread-child 
+                lwc:spread={playerPropTwo}>
+            </c-spread-child>
+        </div>
+    </lightning-card>
+</template>
