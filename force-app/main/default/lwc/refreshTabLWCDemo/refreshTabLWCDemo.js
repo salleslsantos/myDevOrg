@@ -1,5 +1,5 @@
 import { api, track, LightningElement, wire } from 'lwc';
-import {IsConsoleNavigation,refreshTab, getFocusedTabInfo, setTabLabel, setTabIcon} from 'lightning/platformWorkspaceApi';
+import {IsConsoleNavigation,refreshTab, getFocusedTabInfo, setTabLabel, setTabIcon, setTabHighlighted} from 'lightning/platformWorkspaceApi';
 
 export default class refreshTabLWCDemo extends LightningElement {
 
@@ -31,6 +31,18 @@ export default class refreshTabLWCDemo extends LightningElement {
             if(this.isConsoleNavigation){
                 const getTabInfoForIcon = await getFocusedTabInfo();
                 setTabIcon(getTabInfoForIcon.tabId,'utility:einstein');
+            }
+        }
+
+        async handleHighlight(event){
+            if(this.isConsoleNavigation){
+                //const highlighted = event.detail.checked;
+                const tabSelected = await getFocusedTabInfo();
+                console.log('tabSelected: '+tabSelected.tabId);
+                setTabHighlighted(tabSelected.tabId, true, {
+                    pulse: true,
+                    state: 'success'
+                });
             }
         }
 
